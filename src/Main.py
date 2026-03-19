@@ -9,7 +9,7 @@ class Main:
             print("Choose an option from menu:")
             print("1. Validate a CPF")
             print("2. Generate a CPF")
-            print("3. Generate x CPFs")
+            print("3. Generate 100 (one hundred) CPFs")
             print("0. Exit")
 
             choice = input("Type a option from menu: ")
@@ -31,10 +31,8 @@ class Main:
 
             elif choice == "3":
                 try:
-                    amount = input("Enter the number of CPFs to generate: ")
-
                     cpf = Cpf("")
-                    generated_cpfs = cpf.generate(int(amount))
+                    generated_cpfs = cpf.generate(100)
 
                     print()
                     for index, cpf in enumerate(generated_cpfs):

@@ -53,7 +53,14 @@ class Cpf:
             cpf = f"{cpf}{first_check_digit}{second_check_digit}"
             list_of_cpfs.append(cpf)
 
+        self.__create_log_file(list_of_cpfs)
+
         return list_of_cpfs
+
+    def __create_log_file(self, cpfs: list) -> None:
+        with open("generated_cpfs.log", "w", encoding="utf-8") as file:
+            for cpf in cpfs:
+                file.write(f"{cpf}\n")
 
     def __check_cpf(self) -> bool:
         # Check if the CPF is empty, null, has less than 11 characters, or contains non-digit characters
