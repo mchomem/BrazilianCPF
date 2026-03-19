@@ -35,6 +35,26 @@ class Cpf:
 
         return cpf
 
+    def generate(self, amount: int) -> list:
+        if amount <= 0 or amount is None or amount > 1001:
+            raise ValueError("Amount must be a positive integer between 1 and 1000.")
+
+        list_of_cpfs = []
+
+        for _ in range(amount):
+
+            cpf = ""
+
+            for _ in range(9):
+                cpf += str(randint(0, 9))
+
+            first_check_digit = self.__calculate_check_digits(cpf)
+            second_check_digit = self.__calculate_check_digits(f"{cpf}{first_check_digit}")
+            cpf = f"{cpf}{first_check_digit}{second_check_digit}"
+            list_of_cpfs.append(cpf)
+
+        return list_of_cpfs
+
     def __check_cpf(self) -> bool:
         # Check if the CPF is empty, null, has less than 11 characters, or contains non-digit characters
         if self.cpf == "" or self.cpf is None or len(self.cpf) < 11 or self.cpf.isdigit() == False:

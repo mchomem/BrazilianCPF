@@ -9,6 +9,7 @@ class Main:
             print("Choose an option from menu:")
             print("1. Validate a CPF")
             print("2. Generate a CPF")
+            print("3. Generate x CPFs")
             print("0. Exit")
 
             choice = input("Type a option from menu: ")
@@ -28,12 +29,27 @@ class Main:
                 generated_cpf = cpf_generator.generate()
                 print(f"\nGenerated CPF: {generated_cpf}\n")
 
+            elif choice == "3":
+                try:
+                    amount = input("Enter the number of CPFs to generate: ")
+
+                    cpf = Cpf("")
+                    generated_cpfs = cpf.generate(int(amount))
+
+                    print()
+                    for index, cpf in enumerate(generated_cpfs):
+                        print(f"{cpf}")
+                    print()
+
+                except ValueError as e:
+                    print(f"\nError: {e}\n")
+
             elif choice == "0":
                 print("\nExiting the program.\n")
                 break
 
             else:
-                print("\nInvalid choice. Please enter 1, 2, or 0.\n")
+                print("\nInvalid choice. Please enter with a value from menu.\n")
 
 
 if __name__ == "__main__":
