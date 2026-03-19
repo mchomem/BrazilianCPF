@@ -1,8 +1,10 @@
 # Brazilian CPF
 
-Projeto de estudo de conceitos do Python. Este projeto também serve como exercício para aulas.
+Projeto de estudo de uso básico do Python. Este projeto serve como exercício de apoio em aulas.
 
-## Técnicas utilizadas neste projeto 
+## Conceitos e técnicas utilizadas
+
+O que o aluno encontra neste projeto:
 
 - controle de fluxo;
     - desvio condicional;
@@ -11,3 +13,4 @@ Projeto de estudo de conceitos do Python. Este projeto também serve como exerc�
 - manipulação de cadeia de caracteres;
 - uso de bibliotecas (random);
 - uso de orientação a objetos;
+- I/O com escrita de arquivo em dispositivo de armazenamento;
